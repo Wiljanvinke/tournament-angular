@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Participant } from './participant/participant.component';
 import { ParticipantService } from './participant/participant.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +10,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'Tournament Demo in Angular';
-  table;
+  table: HTMLTableElement;
   participantService: ParticipantService;
 
-  getParticipants(): Observable<Participant[]>{
+  public getParticipants(): Observable<Participant[]>{
+    let row = this.table.insertRow(-1);
+    let cell = row.insertCell(-1);
+    cell.innerHTML = this.participantService.getParticipants()[0];
     return this.participantService.getParticipants();
   }
 }
