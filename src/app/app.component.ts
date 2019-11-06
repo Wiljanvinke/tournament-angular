@@ -23,11 +23,11 @@ export class AppComponent implements OnInit {
   constructor(public participantService: ParticipantService){}
 
   public getParticipants(): Observable<Participant[]> {
-    this.participantService.getParticipants().subscribe(data => {
-      this.participants = data
-    });
+    this.participantService.getParticipants().subscribe(data => 
+       console.log(data)
+    );
     this.test = this.participants;
-    console.log(this.participantService.getParticipants()[0]);
+    console.log(this.participants);
     return this.participantService.getParticipants();
 
   }
