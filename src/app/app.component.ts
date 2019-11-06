@@ -14,17 +14,17 @@ export class AppComponent implements OnInit {
   test;
   table: HTMLTableElement;
   participants: Participant[];
-  displayedColumns: string[] = ['email'];
+  displayedColumns: string[] = ['email', 'firstName'];
 
   ngOnInit() {
-    this.getParticipants();
+    console.log(this.getParticipants());
   }
 
   constructor(public participantService: ParticipantService){}
 
   public getParticipants(): Observable<Participant[]> {
     this.participantService.getParticipants().subscribe(data => 
-       console.log(data)
+       this.participants = data
     );
     this.test = this.participants;
     console.log(this.participants);
