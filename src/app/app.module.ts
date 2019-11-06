@@ -18,7 +18,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule, 
     MatTableModule,
     BrowserAnimationsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

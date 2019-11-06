@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   test;
   table: HTMLTableElement;
   participants: Participant[];
+  displayedColumns: string[] = ['email'];
 
   ngOnInit() {
     this.getParticipants();
