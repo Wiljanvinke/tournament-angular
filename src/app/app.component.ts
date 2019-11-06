@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   displayedColumns: string[] = ['email', 'firstName'];
 
   ngOnInit() {
-    console.log(this.getParticipants());
+    this.getParticipants();
   }
 
   constructor(public participantService: ParticipantService){}
